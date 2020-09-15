@@ -2,7 +2,7 @@
 :toc:
 
 This Repo contain a reference implementation for a compliance verified-id OpenId Provider Server.
-This server use the IAMID library created by Innovation Hub https://uk-gitlab.almuk.santanderuk.corp/verified-id/iamid-provider[iamid-provider]
+This server use the IAMID library created by Innovation Hub https://github.com/gruposantander/iamid-provider[iamid-provider]
 
 == Configuration
 
