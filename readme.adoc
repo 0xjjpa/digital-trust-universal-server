@@ -1,0 +1,84 @@
+= DTP Universal OP Server
+:toc:
+
+This Repo contain a reference implementation for a compliance verified-id OpenId Provider Server.
+This server use the IAMID library created by Innovation Hub https://uk-gitlab.almuk.santanderuk.corp/verified-id/iamid-provider[iamid-provider]
+
+== Configuration
+
+To run this server you need to provided some configuration and environment setup, even if some defaults are already provided:
+
+=== Environment Variables
+
+PORT:: Port number where the server will run.
+DEBUG:: Enables/disables specific debugging namespaces, see docs from https://www.npmjs.com/package/debug[debug] for more info.
+CLIENT_BASE_URL:: The url for the DTP graphql API.
+
+=== Configs Files
+
+There are three json files that should be provided to the server for configuration:
+
+- `${project_root}/config/environment.json`
+- `${project_root}/config/log.json`
+- `${project_root}/config/secrets.js`
+
+You can see the default values inside the repository and in the fixed values explained in https://github.com/gruposantander/iamid-provider/blob/master/docs/config.adoc[iamid-provider config docs]
+
+==== environment.json
+
+This configuration file contain the values for setup the op server functionality, is a json file that can contain the keys described in https://github.com/gruposantander/iamid-provider/blob/master/docs/config.adoc[iamid-provider config docs] and also:
+
+pid_whitelist:: An object containing the configuration for whitelist the PID that can do login in the server. Has this structure:
+[source,json]
+----
+  "pid_whitelist": {
+    "enabled": true, // If this feature is enabled
+    "salt": "banana", // Salt used to calculate the hash
+    // List of PID hashed that are allowed to use the login.
+    "list": ["84e658cf26917bf442bb7a83174697d28fdd94d70266dc8b79530f85663014a7"]
+  }
+----
+
+==== log.json
+
+This file contain the log configuration, following the docs of the used library https://github.com/log4js-node/log4js-node[log4js] inside this file should be defined the `appenders` and `categories`, a exammple file could be:
+
+----
+{
+  "appenders": { "console": { "type": "console" } },
+  "categories": {
+    "default": { "appenders": ["console"], "level": "info" }
+  }
+}
+----
+
+The normal appender will be `console` and all the logs in the application use the level `debug`, but never print any sensitive information so the normal log level in PRO could be `debug`.
+
+The existing logs categories are:
+
+- initiate-authorize
+- authorize
+- interaction
+- login
+- consent
+- token
+- error
+- abort
+- logout
+
+But for PRO default category, which include all categories, can be used.
+
+==== secrets.js
+
+This file contain values that are supposed to be 'secrets' (confidential) like keys, passwords... all accepted values can be found in https://github.com/gruposantander/iamid-provider/blob/master/docs/config.adoc[iamid-provider config docs]
+
+== How to run the server?
+
+Easy just
+
+----
+npm start
+----
+
+== How to deploy using docker?
+There exist a file called `build-and-push.sh` for this purpose inside the repo.

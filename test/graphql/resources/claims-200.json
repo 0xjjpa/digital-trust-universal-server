@@ -1,0 +1,133 @@
+{
+  "data": {
+    "User": {
+      "username": "hilton",
+      "PersonalBasicDetail": {
+        "title": "Mrs",
+        "given_name": "Yost",
+        "family_name": "Hilton",
+        "gender": "female",
+        "birthdate": "1985-05-22T00:00:00.000Z",
+        "civil_status": "married",
+        "country_of_birth": "GB",
+        "nationality": "GB",
+        "ialPBD": "2"
+      },
+      "BusinessBasicDetail": null,
+      "Addresses": [
+        {
+          "formatted": "19 Kacey Forest, Redding, QZBAD9, United Kingdom",
+          "street_address": "19 Kacey Forest",
+          "locality": "Redding",
+          "region": "",
+          "postal_code": "QZBAD9",
+          "country": "United Kingdom",
+          "ialAddress": "2"
+        },
+        {
+          "formatted": "33 Mountain, Lockhill, LH1AB8, United Kingdom",
+          "street_address": "33 Mountain",
+          "locality": "Lockhill",
+          "region": "",
+          "postal_code": "LH1AB8",
+          "country": "United Kingdom",
+          "ialAddress": "1"
+        }
+      ],
+      "PhoneNumbers": [
+        {
+          "value": "0000000000",
+          "ialPhoneNumber": "2"
+        },
+        {
+          "value": "0000000001",
+          "ialPhoneNumber": "1"
+        }
+      ],
+      "Emails": [
+        {
+          "value": "hilton@exampleop.com",
+          "ialEmail": "2"
+        },
+        {
+          "value": "hilton22@exampleop2.com",
+          "ialEmail": "1"
+        }
+      ],
+      "Finances": [
+        {
+          "currency": "GBP",
+          "total_balance": "5000.00",
+          "last_year_money_in": "40000.00",
+          "last_quarter_money_in": "9000.00",
+          "average_monthly_money_in": "3000.00",
+          "ialFinance": "3"
+        },
+        {
+          "currency": "EUR",
+          "total_balance": "25000.00",
+          "last_year_money_in": "8000.00",
+          "last_quarter_money_in": "3000.00",
+          "average_monthly_money_in": "500.00",
+          "ialFinance": "3"
+        }
+      ],
+      "BankAccounts": [
+        {
+          "type": "Personal",
+          "bankId": "09012700047186",
+          "entity": "Bank A",
+          "product": "Current Account",
+          "country": "GB",
+          "currency": "GBP",
+          "ialBankAccount": "3",
+          "BankAccountIdentifiers": [
+            {
+              "type": "UK.SortCodeAccountNumber",
+              "identification": "09012700047186"
+            },
+            {
+              "type": "IBAN",
+              "identification": "UK002209209012700047186"
+            }
+          ]
+        },
+        {
+          "type": "Personal",
+          "bankId": "09012700055123",
+          "entity": "Bank A",
+          "product": "Savings Account",
+          "country": "GB",
+          "currency": "EUR",
+          "ialBankAccount": "3",
+          "BankAccountIdentifiers": [
+            {
+              "type": "UK.SortCodeAccountNumber",
+              "identification": "09012700055123"
+            }
+          ]
+        }
+      ],
+      "IdDocuments": [
+        {
+          "type": "passport",
+          "issuer_country": "GB",
+          "identification": "SQ8RN5LX1",
+          "ialIDDoc": "3"
+        },
+        {
+          "type": "driving_license",
+          "issuer_country": "GB",
+          "identification": "HILT131123131206",
+          "ialIDDoc": "2"
+        },
+        {
+          "type": "national_card",
+          "issuer_country": "GB",
+          "identification": "331123123121R",
+          "ialIDDoc": "3"
+        }
+      ]
+    }
+  }
+}

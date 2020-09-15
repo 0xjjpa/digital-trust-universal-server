@@ -1,0 +1,60 @@
+{
+  "name": "@gruposantander/universal-server",
+  "version": "1.0.0",
+  "description": "Digital Trust Protocol Universal Server",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "lint:fix": "standard --fix",
+    "lint": "standard",
+    "test:system": "mocha e2e/system.js",
+    "test:unit": "mocha test/run.js",
+    "test:unit-no-only": "npm run test:unit -- --forbid-only",
+    "coverage": "nyc npm run test:unit-no-only",
+    "test": "npm run lint && npm run coverage"
+  },
+  "author": "Alberto Pulido",
+  "license": "MIT",
+  "dependencies": {
+    "@gruposantander/iamid-provider": "^0.5.1",
+    "debug": "^4.1.1",
+    "graphql": "^15.3.0",
+    "graphql-request": "^3.1.0",
+    "https-proxy-agent": "^4.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "log4js": "^6.1.0",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "husky": "^4.0.10",
+    "mocha": "^7.0.0",
+    "mongodb-memory-server": "^6.2.3",
+    "nock": "^11.7.2",
+    "nyc": "^15.0.0",
+    "pkce-challenge": "^2.0.0",
+    "set-cookie-parser": "^2.4.0",
+    "sinon": "^8.1.0",
+    "standard": "^14.3.1",
+    "supertest": "^4.0.2"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js",
+      "test/**/*.js"
+    ],
+    "exclude": [],
+    "reporter": [
+      "lcovonly",
+      "html",
+      "text"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm i && npm test"
+    }
+  }
+}

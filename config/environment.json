@@ -1,0 +1,7 @@
+{
+  "pid_whitelist": {
+    "enabled": false,
+    "salt": "banana",
+    "list": []
+  }
+}

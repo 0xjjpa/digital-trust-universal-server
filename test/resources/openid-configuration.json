@@ -1,0 +1,289 @@
+{
+  "authorization_endpoint": "https://verifiedid-nginx-spa-verifiedid-pro.e4ff.pro-eu-west-1.openshiftapps.com",
+  "claims_parameter_supported": true,
+  "claims_supported": [
+    "sub",
+    "txn",
+    "sid",
+    "auth_time",
+    "iss",
+    "assertion_claims",
+    "total_balance",
+    "phone_number",
+    "email",
+    "birthdate",
+    "family_name",
+    "given_name",
+    "age",
+    "address",
+    "gender",
+    "country_of_birth",
+    "title",
+    "nationality",
+    "civil_status",
+    "last_year_money_in",
+    "average_monthly_money_in",
+    "last_quarter_money_in",
+    "company_registered_name",
+    "company_trade_name",
+    "company_start_date",
+    "company_end_date",
+    "company_type",
+    "company_country_incorporation",
+    "company_age",
+    "company_operating",
+    "national_card_id",
+    "passport_id",
+    "driving_license_id",
+    "bank_account"
+  ],
+  "code_challenge_methods_supported": [
+    "S256"
+  ],
+  "digital_id_certified_data_extension": true,
+  "grant_types_supported": [
+    "authorization_code"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "issuer": "https://op.example.com",
+  "jwks_uri": "https://myid.io/jwks",
+  "request_object_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "request_parameter_supported": false,
+  "request_uri_parameter_supported": true,
+  "require_request_uri_registration": true,
+  "pushed_authorization_request_endpoint": "https://myid.io/initiate-authorize",
+  "response_modes_supported": [
+    "form_post",
+    "fragment",
+    "query"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "scopes_supported": [
+    "openid"
+  ],
+  "subject_types_supported": [
+    "pairwise"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "private_key_jwt"
+  ],
+  "token_endpoint_auth_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "token_endpoint": "https://myid.io/token",
+  "userinfo_endpoint": "https://myid.io/me",
+  "userinfo_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "claim_types_supported": [
+    "normal"
+  ],
+  "assertion_claims_query_language_supported": {
+    "date": [
+      "eq",
+      "gt",
+      "lt",
+      "gte",
+      "lte"
+    ],
+    "decimal": [
+      "eq",
+      "gt",
+      "lt",
+      "gte",
+      "lte"
+    ],
+    "object": [],
+    "phone_number": [
+      "eq"
+    ],
+    "string": [
+      "eq"
+    ],
+    "number": [
+      "eq",
+      "gt",
+      "lt",
+      "gte",
+      "lte"
+    ],
+    "boolean": [
+      "eq"
+    ],
+    "array": [
+      "none",
+      "every",
+      "some"
+    ]
+  },
+  "assertion_claims_supported": true,
+  "claims_in_assertion_claims_supported": {
+    "total_balance": {
+      "type": "object",
+      "props": {
+        "amount": {
+          "type": "decimal"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    },
+    "phone_number": {
+      "type": "phone_number"
+    },
+    "email": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "date"
+    },
+    "family_name": {
+      "type": "string"
+    },
+    "given_name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number"
+    },
+    "address": {
+      "type": "object",
+      "props": {
+        "formatted": {
+          "type": "string"
+        },
+        "street_address": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      }
+    },
+    "gender": {
+      "type": "string"
+    },
+    "country_of_birth": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "civil_status": {
+      "type": "string"
+    },
+    "last_year_money_in": {
+      "type": "object",
+      "props": {
+        "amount": {
+          "type": "decimal"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    },
+    "average_monthly_money_in": {
+      "type": "object",
+      "props": {
+        "amount": {
+          "type": "decimal"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    },
+    "last_quarter_money_in": {
+      "type": "object",
+      "props": {
+        "amount": {
+          "type": "decimal"
+        },
+        "currency": {
+          "type": "string"
+        }
+      }
+    },
+    "company_registered_name": {
+      "type": "string"
+    },
+    "company_trade_name": {
+      "type": "string"
+    },
+    "company_start_date": {
+      "type": "date"
+    },
+    "company_end_date": {
+      "type": "date"
+    },
+    "company_type": {
+      "type": "string"
+    },
+    "company_country_incorporation": {
+      "type": "string"
+    },
+    "company_age": {
+      "type": "number"
+    },
+    "company_operating": {
+      "type": "boolean"
+    },
+    "national_card_id": {
+      "type": "string"
+    },
+    "passport_id": {
+      "type": "string"
+    },
+    "driving_license_id": {
+      "type": "string"
+    },
+    "bank_account": {
+      "type": "object",
+      "props": {
+        "id": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "identifiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "props": {
+              "type": {
+                "type": "string"
+              },
+              "identification": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
