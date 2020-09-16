@@ -10,8 +10,8 @@ WORKDIR /home/op_server
 ENV TZ="Europe/London" \
     NODE_ENV=production
 
-COPY package.json package-lock.json docker/.npmrc ./
-
+COPY package.json package-lock.json ./
+COPY docker/npmrc ./.npmrc
 RUN npm ci
 
 COPY . .
