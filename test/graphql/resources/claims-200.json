@@ -126,6 +126,12 @@
           "issuer_country": "GB",
           "identification": "331123123121R",
           "ialIDDoc": "3"
+        },
+        {
+          "type": "tax",
+          "issuer_country": "GB",
+          "identification": "1000067817",
+          "ialIDDoc": "3"
         }
       ]
     }

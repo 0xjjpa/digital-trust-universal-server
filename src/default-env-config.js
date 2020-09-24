@@ -31,6 +31,7 @@ module.exports = {
       company_age: { type: 'number' },
       company_operating: { type: 'boolean' },
       national_card_id: { type: 'string' },
+      tax_id: { type: 'string' },
       passport_id: { type: 'string' },
       driving_license_id: { type: 'string' },
       bank_account: { type: 'object', props: { id: { type: 'string' }, currency: { type: 'string' }, type: { type: 'string' }, identifiers: { type: 'array', items: { type: 'object', props: { type: { type: 'string' }, identification: { type: 'string' } } } } } }
@@ -66,6 +67,7 @@ module.exports = {
     national_card_id: null,
     passport_id: null,
     driving_license_id: null,
+    tax_id: null,
     bank_account: null
   },
   masks: {
@@ -75,7 +77,8 @@ module.exports = {
     family_name: { type: 'fill', args: { begin: 2, end: -2, filling: '****' } },
     passport_id: { type: 'slice', args: { prefix: '******', begin: -4 } },
     driving_license_id: { type: 'fill', args: { begin: 4, end: -2, filling: '************' } },
-    national_card_id: { type: 'slice', args: { prefix: '*****', begin: -4 } }
+    national_card_id: { type: 'slice', args: { prefix: '*****', begin: -4 } },
+    tax_id: { type: 'slice', args: { prefix: '******', begin: -4 } }
   },
   pushedRequestURN: 'urn:op.example:',
   issuer: 'https://op.example.com'

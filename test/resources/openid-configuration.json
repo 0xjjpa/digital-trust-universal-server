@@ -35,6 +35,7 @@
     "national_card_id",
     "passport_id",
     "driving_license_id",
+    "tax_id",
     "bank_account"
   ],
   "code_challenge_methods_supported": [
@@ -255,6 +256,9 @@
       "type": "string"
     },
     "driving_license_id": {
+      "type": "string"
+    },
+    "tax_id": {
       "type": "string"
     },
     "bank_account": {

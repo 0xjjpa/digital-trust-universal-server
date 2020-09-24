@@ -122,12 +122,14 @@ class GraphQLConnector {
       const nationalCardId = []
       const passportId = []
       const drivingLicenseId = []
+      const taxId = []
 
       IdDocuments.map(item => {
         switch (item.type) {
           case 'national_card': nationalCardId.push(new Resolved(item.identification, item.ialIDDoc)); break
           case 'passport': passportId.push(new Resolved(item.identification, item.ialIDDoc)); break
           case 'driving_license': drivingLicenseId.push(new Resolved(item.identification, item.ialIDDoc)); break
+          case 'tax': taxId.push(new Resolved(item.identification, item.ialIDDoc)); break
         }
       })
 
@@ -171,6 +173,7 @@ class GraphQLConnector {
         national_card_id: claimIfAny(nationalCardId),
         passport_id: claimIfAny(passportId),
         driving_license_id: claimIfAny(drivingLicenseId),
+        tax_id: claimIfAny(taxId),
         bank_account: claimIfAny(bankAccount),
         total_balance: claimIfAny(totalBalance),
         last_year_money_in: claimIfAny(lastYearMoneyIn),
@@ -211,6 +214,7 @@ class GraphQLConnector {
       national_card_id: { ial: 1 },
       passport_id: { ial: 1 },
       driving_license_id: { ial: 1 },
+      tax_id: { ial: 1 },
       total_balance: { ial: 1 },
       bank_account: { ial: 1 },
       last_year_money_in: { ial: 1 },

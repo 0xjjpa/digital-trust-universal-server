@@ -97,6 +97,7 @@ module.exports = function () {
           national_card_id: { ial: 1 },
           passport_id: { ial: 1 },
           driving_license_id: { ial: 1 },
+          tax_id: { ial: 1 },
           bank_account: { ial: 1 }
         }
       )
@@ -121,16 +122,18 @@ module.exports = function () {
       }))
     })
 
-    it('should resolve national_card_id, passport_id, and driving_license_id if available', async function () {
+    it('should resolve national_card_id, passport_id, taxId and driving_license_id if available', async function () {
       const claims = await this.connector.resolver(this.uid, {
         national_card_id: { ials: [1] },
         passport_id: { ials: [1] },
-        driving_license_id: { ials: [1] }
+        driving_license_id: { ials: [1] },
+        tax_id: { ials: [1] }
       })
       deepEqual(claims, new ClaimResponse({
         national_card_id: new Claim([new Resolved('331123123121R', '3')]),
         passport_id: new Claim([new Resolved('SQ8RN5LX1', '3')]),
-        driving_license_id: new Claim([new Resolved('HILT131123131206', '2')])
+        driving_license_id: new Claim([new Resolved('HILT131123131206', '2')]),
+        tax_id: new Claim([new Resolved('1000067817', '3')])
       }))
     })
 
