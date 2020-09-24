@@ -84,6 +84,6 @@ npm start
 There exist a file called `build-and-push.sh` for this purpose inside the repo.
 
 == How to extend this server to support more claims
-If you need support for another claims, it's very simple and just will need to modify the openid-configuration and the resolver. Please keep unit tests up to date covering new changes, we recommend you always start by adding the test and follow TDD of course!.
+If you need support for another claims, it's very simple and just will need to modify the openid-configuration, the resolver and the client (if the schema has changed to accommodate the new claim). Please keep unit tests up to date covering new changes, we recommend you always start by adding the test and follow TDD of course!.
 
 For instance, when adding a new claim, the best place to start is by adding a test case or modify the existing ones under `test/graphql/resolver.spec.js' to accommodate your changes. The commit history for this comment will show you and example with all the changes needed for adding tax_id claim.
