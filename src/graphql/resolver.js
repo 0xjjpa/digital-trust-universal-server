@@ -74,7 +74,8 @@ class GraphQLConnector {
         Emails = [],
         Finances = [],
         BankAccounts = [],
-        IdDocuments = []
+        IdDocuments = [],
+        Proofs = []
       } = response.User
 
       debug('PersonalBasicDetail')
@@ -157,6 +158,19 @@ class GraphQLConnector {
         averageMonthlyMoneyIn.push(new Resolved({ amount: item.average_monthly_money_in, currency: item.currency }, item.ialFinance))
       })
 
+      debug('Proofs')
+      const proof = []
+      Proofs.map(item => {
+        proof.push(new Resolved({
+          id: item.id,
+          claims: item.claims,
+          content_type: item.content_type,
+          content: item.content,
+          expires: item.expires,
+          verified: item.verified
+        }, '3'))
+      })
+
       const result = {
         title: claimIfFound(title, ialPBD),
         given_name: claimIfFound(givenName, ialPBD),
@@ -178,7 +192,8 @@ class GraphQLConnector {
         total_balance: claimIfAny(totalBalance),
         last_year_money_in: claimIfAny(lastYearMoneyIn),
         last_quarter_money_in: claimIfAny(lastQuarterMoneyIn),
-        average_monthly_money_in: claimIfAny(averageMonthlyMoneyIn)
+        average_monthly_money_in: claimIfAny(averageMonthlyMoneyIn),
+        proof: claimIfAny(proof)
       }
 
       if (BusinessBasicDetail !== null) {
@@ -219,7 +234,8 @@ class GraphQLConnector {
       bank_account: { ial: 1 },
       last_year_money_in: { ial: 1 },
       last_quarter_money_in: { ial: 1 },
-      average_monthly_money_in: { ial: 1 }
+      average_monthly_money_in: { ial: 1 },
+      proof: { ial: 3 }
     }
 
     class Authorization {

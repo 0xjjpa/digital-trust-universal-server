@@ -80,7 +80,14 @@ class GraphQLClient {
                         issuer_country
                         identification
                         ialIDDoc: ial
-                    }
+                    },
+                  Proofs {
+                    claims
+                    content
+                    content_type
+                    expires
+                    verified
+                  }
                 }
             }
         `

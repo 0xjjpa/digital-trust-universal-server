@@ -98,7 +98,8 @@ module.exports = function () {
           passport_id: { ial: 1 },
           driving_license_id: { ial: 1 },
           tax_id: { ial: 1 },
-          bank_account: { ial: 1 }
+          bank_account: { ial: 1 },
+          proof: { ial: 3 }
         }
       )
     })
@@ -194,6 +195,22 @@ module.exports = function () {
         address: new Claim([
           new Resolved({ country: 'United Kingdom', formatted: '19 Kacey Forest, Redding, QZBAD9, United Kingdom', locality: 'Redding', postal_code: 'QZBAD9', street_address: '19 Kacey Forest', region: '' }, '2'),
           new Resolved({ country: 'United Kingdom', formatted: '33 Mountain, Lockhill, LH1AB8, United Kingdom', locality: 'Lockhill', postal_code: 'LH1AB8', street_address: '33 Mountain', region: '' }, '1')
+        ])
+      }))
+    })
+
+    it.only('should resolve proof claims', async function () {
+      const claims = await this.connector.resolver(this.uid, {
+        proof: { ials: [3] }
+      })
+
+      // console.log('Claims:', claims.proof.resolved[0].value.content)
+      // TODO: check the whole proof with content
+      delete claims.proof.resolved[0].value.content
+
+      deepEqual(claims, new ClaimResponse({
+        proof: new Claim([
+          new Resolved({ id: 'ref-0001', claims: ['given_name'], content_type: 'verifiable-credential', expires: '2020-10-10', verified: '2018-10-12' }, '3')
         ])
       }))
     })

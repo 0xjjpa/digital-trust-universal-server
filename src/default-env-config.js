@@ -34,8 +34,8 @@ module.exports = {
       tax_id: { type: 'string' },
       passport_id: { type: 'string' },
       driving_license_id: { type: 'string' },
-      bank_account: { type: 'object', props: { id: { type: 'string' }, currency: { type: 'string' }, type: { type: 'string' }, identifiers: { type: 'array', items: { type: 'object', props: { type: { type: 'string' }, identification: { type: 'string' } } } } } }
-
+      bank_account: { type: 'object', props: { id: { type: 'string' }, currency: { type: 'string' }, type: { type: 'string' }, identifiers: { type: 'array', items: { type: 'object', props: { type: { type: 'string' }, identification: { type: 'string' } } } } } },
+      proof: { type: 'object', props: { id: { type: 'string' }, claims: { type: 'array', items: { type: 'string' } }, content: { type: 'object' }, content_type: { type: 'string' }, expires: { type: 'date' }, verified: { type: 'date' } } }
     }
   },
   claims: {
@@ -68,7 +68,8 @@ module.exports = {
     passport_id: null,
     driving_license_id: null,
     tax_id: null,
-    bank_account: null
+    bank_account: null,
+    proof: null
   },
   masks: {
     email: { type: 'email' },
