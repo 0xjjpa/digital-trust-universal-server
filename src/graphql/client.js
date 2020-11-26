@@ -82,6 +82,7 @@ class GraphQLClient {
                         ialIDDoc: ial
                     },
                   Proofs {
+                    proofId
                     claims
                     content
                     content_type

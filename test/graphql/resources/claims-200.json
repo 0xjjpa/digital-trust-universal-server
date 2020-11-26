@@ -136,7 +136,7 @@
       ],
       "Proofs" : [
         {
-            "id": "ref-0001",
+            "proofId": "ref-0001",
             "claims": ["given_name"],
             "content_type": "verifiable-credential",
             "content": {           

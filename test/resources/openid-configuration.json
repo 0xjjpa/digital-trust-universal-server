@@ -36,7 +36,8 @@
     "passport_id",
     "driving_license_id",
     "tax_id",
-    "bank_account"
+    "bank_account",
+    "proof"
   ],
   "code_challenge_methods_supported": [
     "S256"
@@ -286,6 +287,32 @@
               }
             }
           }
+        }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "props": {
+        "proofId": {
+          "type": "string"
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "content": {
+          "type": "object"
+        },
+        "content_type": {
+          "type": "string"
+        },
+        "expires": {
+          "type": "date"
+        },
+        "verified": {
+          "type": "date"
         }
       }
     }

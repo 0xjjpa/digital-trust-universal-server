@@ -199,7 +199,7 @@ module.exports = function () {
       }))
     })
 
-    it.only('should resolve proof claims', async function () {
+    it('should resolve proof claims', async function () {
       const claims = await this.connector.resolver(this.uid, {
         proof: { ials: [3] }
       })
@@ -210,7 +210,7 @@ module.exports = function () {
 
       deepEqual(claims, new ClaimResponse({
         proof: new Claim([
-          new Resolved({ id: 'ref-0001', claims: ['given_name'], content_type: 'verifiable-credential', expires: '2020-10-10', verified: '2018-10-12' }, '3')
+          new Resolved({ proofId: 'ref-0001', claims: ['given_name'], content_type: 'verifiable-credential', expires: '2020-10-10', verified: '2018-10-12' }, '3')
         ])
       }))
     })

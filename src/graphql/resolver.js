@@ -162,7 +162,7 @@ class GraphQLConnector {
       const proof = []
       Proofs.map(item => {
         proof.push(new Resolved({
-          id: item.id,
+          proofId: item.proofId,
           claims: item.claims,
           content_type: item.content_type,
           content: item.content,
